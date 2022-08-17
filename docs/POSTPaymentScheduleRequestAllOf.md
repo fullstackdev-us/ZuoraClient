@@ -1,0 +1,24 @@
+# ZuoraClient.Model.POSTPaymentScheduleRequestAllOf
+
+## Properties
+
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**AccountId** | **string** | ID of the customer account the payment schedule belongs to.  **Note:** &#x60;accountId&#x60; and &#x60;accountNumber&#x60; cannot both be &#x60;null&#x60;. When both fields are specified, the two values must match each other.            | [optional] 
+**AccountNumber** | **string** | Account number of the customer account the payment schedule belongs to.  **Note:** &#x60;accountId&#x60; and &#x60;accountNumber&#x60; cannot both be &#x60;null&#x60;. When both fields are specified, the two values must match each other.            | [optional] 
+**Amount** | **decimal** | The amount of each payment schedule item in the payment schedule.  **Note:** - This field is required when &#x60;items&#x60; is not specified. - This field will be ignored when &#x60;items&#x60; is specified.  | [optional] 
+**BillingDocument** | [**POSTPaymentScheduleRequestAllOfBillingDocument**](POSTPaymentScheduleRequestAllOfBillingDocument.md) |  | [optional] 
+**Currency** | **string** | Currency of the payment schedule.  **Note:** - This field is optional. The default value is the account&#39;s default currency. - This field will be ignored when &#x60;items&#x60; is specified.  | [optional] 
+**Description** | **string** | Description of the payment schedule. Max length is 255.  | [optional] 
+**Items** | **List&lt;Object&gt;** | Container array for payment schedule items.  | [optional] 
+**Occurrences** | **int** | The number of payment schedule item to be created. Maximum value is 1000.  **Note:** - This field is required when &#x60;items&#x60; is not specified. - This field will be ignored when &#x60;items&#x60; is specified.   | [optional] 
+**PaymentGatewayId** | **string** | ID of the payment gateway.  **Note:** - This field is optional. The default value is the account&#39;s default payment gateway ID. If no payment gateway ID is found on the cusotmer account level, the default value will be the tenant&#39;s default payment gateway ID. - This field will be ignored when &#x60;items&#x60; is specified.   | [optional] 
+**PaymentMethodId** | **string** | ID of the payment method.  **Note:** - This field is optional. The default value is the account&#39;s default payment method ID. - This field will be ignored when &#x60;items&#x60; is specified.    | [optional] 
+**PaymentScheduleNumber** | **string** | You can use this field to specify the number of the payment schedule. Only characters from the following sets are allowed: A-Z, a-z, 0-9, and &#x60;-&#x60;.  Payment numbers must start with a letter. In addition,&#x60;-&#x60; can only be used at most once and cannot be placed at the beginning or the end of the payment numbers.           | [optional] 
+**Period** | **string** | The frequency for the payment collection since the &#x60;startDate&#x60;.  **Note:** - Thie field is required when &#x60;items&#x60; is not specified. - This field will be ignored when &#x60;items&#x60; is specified. - If &#x60;startDate&#x60; is &#x60;30&#x60; or &#x60;31&#x60; and &#x60;period&#x60; is &#x60;Monthly&#x60;, when in February, payment schedule will use the last day of February for payment collection.   | [optional] 
+**RunHour** | **int** | Specifies at which hour in the day in the tenant’s time zone when this payment will be collected. Available values: &#x60;[0,1,2,~,22,23]&#x60;.  **Note:** - If the time difference between your tenant’s timezone and the timezone where Zuora servers are is not in full hours, for example, 2.5 hours, the payment schedule items will be triggered half hour later than your scheduled time. - This field is optional. The default value is &#x60;0&#x60;. - This field will be ignored when &#x60;items&#x60; is specified.               | [optional] 
+**Standalone** | **bool** | Indicate whether the payments created by the payment schedule are standalone payments or not. When setting to &#x60;true&#x60;, standalone payments will be created. When setting to &#x60;false&#x60;, you can either specify a billing document, or not specifying any billing documents. In the later case, unapplied payments will be created. If set to &#x60;null&#x60;, standalone payment will be created.  **Note**:  - This field is only available if the Standalone Payment is enabled. Do not include this field if Standalone Payment is not enabled. - If Standalone Payment is enabled, default value is &#x60;true&#x60;.  | [optional] 
+**StartDate** | **DateTime** | The date for the first payment collection.  **Note:** - This field is required when &#x60;items&#x60; is not specified. - This field will be ignored when &#x60;items&#x60; is specified.                | [optional] 
+
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+

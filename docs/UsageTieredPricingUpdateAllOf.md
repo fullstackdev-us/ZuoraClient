@@ -1,0 +1,10 @@
+# ZuoraClient.Model.UsageTieredPricingUpdateAllOf
+
+## Properties
+
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**Tiers** | [**List&lt;ChargeTier&gt;**](ChargeTier.md) |  | [optional] 
+
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+

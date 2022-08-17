@@ -1,0 +1,48 @@
+# ZuoraClient.Model.GETSubscriptionTypeAllOf
+
+## Properties
+
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**AccountId** | **string** |  | [optional] 
+**AccountName** | **string** |  | [optional] 
+**AccountNumber** | **string** |  | [optional] 
+**AutoRenew** | **bool** | If &#x60;true&#x60;, the subscription automatically renews at the end of the term. Default is &#x60;false&#x60;.  | [optional] 
+**BillToContact** | [**GETAccountSummaryTypeBillToContact**](GETAccountSummaryTypeBillToContact.md) |  | [optional] 
+**CancelReason** | **string** | The reason for a subscription cancellation copied from the &#x60;changeReason&#x60; field of a Cancel Subscription order action.   This field contains valid value only if a subscription is cancelled through the Orders UI or API. Otherwise, the value for this field will always be &#x60;null&#x60;.  | [optional] 
+**ContractEffectiveDate** | **DateTime** | Effective contract date for this subscription, as yyyy-mm-dd.  | [optional] 
+**ContractedMrr** | **decimal** | Monthly recurring revenue of the subscription.  | [optional] 
+**CurrentTerm** | **long** | The length of the period for the current subscription term.  | [optional] 
+**CurrentTermPeriodType** | **string** | The period type for the current subscription term.  Values are:  * &#x60;Month&#x60; (default) * &#x60;Year&#x60; * &#x60;Day&#x60; * &#x60;Week&#x60;  | [optional] 
+**CustomerAcceptanceDate** | **DateTime** | The date on which the services or products within a subscription have been accepted by the customer, as yyyy-mm-dd.  | [optional] 
+**ExternallyManagedBy** | **string** | An enum field on the Subscription object to indicate the name of a third-party store. This field is used to represent subscriptions created through third-party stores.  | [optional] 
+**Id** | **string** | Subscription ID.  | [optional] 
+**InitialTerm** | **long** | The length of the period for the first subscription term.  | [optional] 
+**InitialTermPeriodType** | **string** | The period type for the first subscription term.  Values are:  * &#x60;Month&#x60; (default) * &#x60;Year&#x60; * &#x60;Day&#x60; * &#x60;Week&#x60;  | [optional] 
+**InvoiceOwnerAccountId** | **string** |  | [optional] 
+**InvoiceOwnerAccountName** | **string** |  | [optional] 
+**InvoiceOwnerAccountNumber** | **string** |  | [optional] 
+**InvoiceSeparately** | **string** | Separates a single subscription from other subscriptions and creates an invoice for the subscription.   If the value is &#x60;true&#x60;, the subscription is billed separately from other subscriptions. If the value is &#x60;false&#x60;, the subscription is included with other subscriptions in the account invoice.  | [optional] 
+**IsLatestVersion** | **bool** | If &#x60;true&#x60;, the current subscription object is the latest version. | [optional] 
+**LastBookingDate** | **DateTime** | The last booking date of the subscription object. This field is writable only when the subscription is newly created as a first version subscription. You can override the date value when creating a subscription through the Subscribe and Amend API or the subscription creation UI (non-Orders). Otherwise, the default value &#x60;today&#x60; is set per the user&#39;s timezone. The value of this field is as follows: * For a new subscription created by the [Subscribe and Amend APIs](https://knowledgecenter.zuora.com/Billing/Subscriptions/Orders/Orders_Harmonization/Orders_Migration_Guidance#Subscribe_and_Amend_APIs_to_Migrate), this field has the value of the subscription creation date. * For a subscription changed by an amendment, this field has the value of the amendment booking date. * For a subscription created or changed by an order, this field has the value of the order date.  | [optional] 
+**Notes** | **string** | A string of up to 65,535 characters.  | [optional] 
+**OrderNumber** | **string** | The order number of the order in which the changes on the subscription are made.   **Note:** This field is only available if you have the [Order Metrics](https://knowledgecenter.zuora.com/BC_Subscription_Management/Orders/AA_Overview_of_Orders#Order_Metrics) feature enabled. If you wish to have access to the feature, submit a request at [Zuora Global Support](http://support.zuora.com/). We will investigate your use cases and data before enabling this feature for you.  | [optional] 
+**PaymentTerm** | **string** | The name of the payment term associated with the subscription. For example, &#x60;Net 30&#x60;. The payment term determines the due dates of invoices.  **Note**: The value of this field is &#x60;null&#x60; if you have the [Flexible Billing](https://knowledgecenter.zuora.com/Billing/Subscriptions/Flexible_Billing) feature disabled.  | [optional] 
+**RatePlans** | [**List&lt;GETSubscriptionRatePlanType&gt;**](GETSubscriptionRatePlanType.md) | Container for rate plans.  | [optional] 
+**RenewalSetting** | **string** | Specifies whether a termed subscription will remain &#x60;TERMED&#x60; or change to &#x60;EVERGREEN&#x60; when it is renewed.   Values are:  * &#x60;RENEW_WITH_SPECIFIC_TERM&#x60; (default) * &#x60;RENEW_TO_EVERGREEN&#x60;  | [optional] 
+**RenewalTerm** | **long** | The length of the period for the subscription renewal term.  | [optional] 
+**RenewalTermPeriodType** | **string** | The period type for the subscription renewal term.  Values are:  * &#x60;Month&#x60; (default) * &#x60;Year&#x60; * &#x60;Day&#x60; * &#x60;Week&#x60;  | [optional] 
+**Revision** | **string** | An auto-generated decimal value uniquely tagged with a subscription. The value always contains one decimal place, for example, the revision of a new subscription is 1.0. If a further version of the subscription is created, the revision value will be increased by 1. Also, the revision value is always incremental regardless of deletion of subscription versions.  | [optional] 
+**ServiceActivationDate** | **DateTime** | The date on which the services or products within a subscription have been activated and access has been provided to the customer, as yyyy-mm-dd  | [optional] 
+**Status** | **string** | Subscription status; possible values are:  * &#x60;Draft&#x60; * &#x60;Pending Activation&#x60; * &#x60;Pending Acceptance&#x60; * &#x60;Active&#x60; * &#x60;Cancelled&#x60; * &#x60;Suspended&#x60;  | [optional] 
+**SubscriptionEndDate** | **DateTime** | The date when the subscription term ends, where the subscription ends at midnight the day before. For example, if the &#x60;subscriptionEndDate&#x60; is 12/31/2016, the subscriptions ends at midnight (00:00:00 hours) on 12/30/2016. This date is the same as the term end date or the cancelation date, as appropriate.  | [optional] 
+**SubscriptionNumber** | **string** |  | [optional] 
+**SubscriptionStartDate** | **DateTime** | Date the subscription becomes effective.  | [optional] 
+**TermEndDate** | **DateTime** | Date the subscription term ends. If the subscription is evergreen, this is null or is the cancellation date (if one has been set).  | [optional] 
+**TermStartDate** | **DateTime** | Date the subscription term begins. If this is a renewal subscription, this date is different from the subscription start date.  | [optional] 
+**TermType** | **string** | Possible values are: &#x60;TERMED&#x60;, &#x60;EVERGREEN&#x60;.  | [optional] 
+**TotalContractedValue** | **decimal** | Total contracted value of the subscription.  | [optional] 
+**_Version** | **long** | This is the subscription version automatically generated by Zuora Billing. Each order or amendment creates a new version of the subscription, which incorporates the changes made in the order or amendment. | [optional] 
+
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+
